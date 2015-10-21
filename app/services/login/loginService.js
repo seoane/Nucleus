@@ -1,7 +1,7 @@
 /**
  * Created by cestevezd on 19/06/2015.
  */
-angular.module('KiplyWebApp.LoginService', []).
+angular.module('NucleusWebApp.LoginService', []).
     factory('loginService', ['ApiEndpoint', '$http', '$location', '$cookies', '$q', '$rootScope', function (ApiEndpoint, $http, $location, $cookies, $q, $rootScope) {
 
         return {
@@ -22,8 +22,8 @@ angular.module('KiplyWebApp.LoginService', []).
                         $cookies.put("username", user);
 
                         $rootScope.username = user;
-
-                        $location.path('/mycards');
+                        console.log("login in")
+                        $location.path('/email');
 
                         resolve()
                     }, function (error) {

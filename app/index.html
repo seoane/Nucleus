@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="NucleusWebApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="NucleusWebApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="NucleusWebApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="NucleusWebApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nucleus</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.1/css/bootstrap-tour.min.css">
+
+</head>
+<body ng-controller="appController"
+      ng-class="{backgroundLogin: $state.current.name === 'login', backgroundApp: $state.current.name !== 'login'}">
+
+<div id="wrapper" ng-class="{wrapper: !$state.is('login') && !$state.is('resetpassword')}">
+  <div id="sidebar-wrapper" ng-show="!$state.is('login') && !$state.is('resetpassword')">
+    <div>
+      <ul class="sidebar-nav nav-pills nav-stacked" style="margin-top: 7px;">
+        <a href="http://www.kiply.com/">
+            <span style="font-weight: bolder;">
+                <span style="color:darkorange;">Nucleus</span>
+                <span style="color: white; float:right; margin-top:-3px; margin-right:5px; font-size: 11.5px;">alpha</span>
+            </span>
+        </a>
+      </ul>
+    </div>
+    <ul class="sidebar-nav nav-pills nav-stacked" style="margin-top: 170px;" id="menu">
+
+      <li><a ui-sref="email" ng-class="{active: $state.is('email')}">
+        <div class="nav-item"><i class="fa fa-envelope nav-icon"    ></i>
+
+          <p class="nav-title">Email</p></div>
+      </a></li>
+      <li><a href="#" ng-click="closeSession()">
+        <div class="nav-item"><i class="fa fa-lg fa-sign-out nav-icon"></i>
+
+          <p class="nav-title">Salir</p></div>
+      </a></li>
+    </ul>
+  </div>
+  <div ui-view></div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-cookies.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-animate.min.js"></script>
+<script src="app.js"></script>
+<script src="views/login/login.js"></script>
+<script src="services/login/loginService.js"></script>
+<script src="views/email/email.js"></script>
+<script src="services/email/emailService.js"></script>
+
+<script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+<script src="https://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.3/ui-bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+
+</body>
+</html>

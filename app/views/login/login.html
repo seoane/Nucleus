@@ -1,0 +1,52 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="text-center" style="width: 100%">
+    <span style="font-weight: bolder;color:darkorange;font-size: 75px;">Nucleus<sub
+        style="color: white; margin-left:1px; font-size: 27px;">alpha</sub></span>
+</div>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row row-centered">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Iniciar sesi&oacute;n</strong>
+                </div>
+                <div class="panel-body">
+                    <form class=form-signin">
+
+                        <input id="usernameInput" class="form-control" type="text" placeholder="Usuario"
+                               ng-model="user.username"/> <br/>
+                        <input class="form-control" type="password" placeholder="Contrase&ntilde;a"
+                               ng-model="user.password"/>
+
+                        <div>
+                            <h5 class="text-danger" ng-show="badCredentials">El usuario o la contraseña no son
+                                correctos</h5>
+                        </div>
+                        <br/>
+                        <button class="btn btn-lg btn-success btn-block" type="submit" ng-click="submitLogin()"
+                                ng-disabled="showLoginAnimation">
+                            <span ng-show="!showLoginAnimation">Enviar</span>
+                            <span><kpl-loading-animation ng-show="showLoginAnimation"
+                                                         color="white"></kpl-loading-animation></span>
+                        </button>
+                        <p style="margin-top: 5px;margin-bottom: -5px;">
+                            <a ui-sref="resetpassword" style="font-size: 13px;">¿Has olvidado tu contraseña?</a>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
