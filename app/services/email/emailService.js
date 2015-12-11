@@ -6,16 +6,37 @@ angular.module('NucleusWebApp.EmailService', []).
 
         return {
             sendEmail: function (startingDate, endingDate, message, hyperlink) {
-                console.log(startingDate, endingDate, message, hyperlink);
-                url = ApiEndpoint + "/user/sendweeklyreport/";
-                $http.post(url, {from_date:startingDate,to_date:to_date,message:message,hyperlink:hyperlink,test_email:null});
+                return $q(function (resolve, reject) {
+                    url = ApiEndpoint + "/user/sendweeklyreport/";
+                    $http.post(url, {
+                        from_date: startingDate,
+                        to_date: endingDate,
+                        message: message,
+                        hyperlink: hyperlink
+                    })
+                        .then(function () {
+                            resolve()
+                        }, function () {
+                            reject()
+                        });
+                })
             },
-            sendTestEmail: function (startingDate, endingDate, message, hyperlink, testEmailAddress) {
-                console.log(startingDate, endingDate, message, hyperlink)
-                url = ApiEndpoint + "/user/sendweeklyreport/";
-                $http.post(url, {from_date:startingDate,to_date:to_date,message:message,hyperlink:hyperlink,test_email:testEmailAddress});
-
+            sendTestEmail: function (startingDate, endingDate, message, hyperlink,testEmailAddress) {
+                return $q(function (resolve, reject) {
+                    url = ApiEndpoint + "/user/sendweeklyreport/";
+                    $http.post(url, {
+                        from_date: startingDate,
+                        to_date: endingDate,
+                        message: message,
+                        hyperlink: hyperlink,
+                        test_email: testEmailAddress
+                    })
+                        .then(function () {
+                            resolve()
+                        }, function () {
+                            reject()
+                        });
+                })
             }
-
         }
     }]);
